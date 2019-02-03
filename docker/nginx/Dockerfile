@@ -16,11 +16,11 @@ RUN openssl req -x509 -out /etc/nginx/ssl/localhost.crt -keyout /etc/nginx/ssl/l
 
 RUN openssl req -x509 -out /etc/nginx/ssl/cloud1.crt -keyout /etc/nginx/ssl/cloud1.key \
   -newkey rsa:2048 -nodes -sha256 \
-  -subj '/CN=http1.cloud' -days 365
+  -subj '/CN=http1.local' -days 365
 
 RUN openssl req -x509 -out /etc/nginx/ssl/cloud2.crt -keyout /etc/nginx/ssl/cloud2.key \
   -newkey rsa:2048 -nodes -sha256 \
-  -subj '/CN=http2.cloud' -days 365
+  -subj '/CN=http2.local' -days 365
 
 #    -config < \
 #    printf "[dn]\nCN=app.local\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:app.local\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth"
