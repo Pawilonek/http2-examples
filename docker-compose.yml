@@ -2,27 +2,15 @@ version: '3'
 
 services:
   web:
-    # image: nginx:1.15
     build: docker/nginx
     ports:
       - 80:80
       - 443:443
     volumes:
       - ./src:/var/www/app
-      - ./docker/nginx/http1.conf:/etc/nginx/conf.d/http1.conf
-      - ./docker/nginx/http1.conf:/etc/nginx/conf.d/http2.conf
+      - ./docker/nginx/app.conf:/etc/nginx/conf.d/app.conf
 
   app:
     image: php:7.3-fpm-alpine
     volumes:
       - ./src:/var/www/app
-
-  #   command: php-fpm --allow-to-run-as-root
-  #   build: ./docker/fpm
-  #   volumes:
-  #     - ./:/var/www/app
-  #     - ./../phppgadmin:/var/www/html/phppgadmin
-  #     - ./docker/fpm/config/php.ini:/usr/local/etc/php/conf.d/php.ini
-  #     - ./docker/fpm/config/php-fpm.conf:/usr/local/etc/php-fpm.conf
-  #     - ./docker/fpm/config/xhgui.php:/var/www/html/xhgui/config/config.php
-  #     - ./docker/apcu/apc.conf.php:/var/www/html/apcu/apc.conf.php
