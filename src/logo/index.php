@@ -63,6 +63,6 @@ $html .= '<div>';
                 <?= $html ?>
             <div>
         </td></tr>
-    </div>
+    </table>
 </body>
 </html>

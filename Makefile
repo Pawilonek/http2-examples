@@ -22,6 +22,9 @@ kill:
 logs:
 	$(DOCKER_COMPOSE) logs
 
-restart-web:
+config-nginx:
+	vim docker/nginx/app.conf
+
+reload-nginx:
 	$(DOCKER_COMPOSE) stop web
 	$(DOCKER_COMPOSE) start web

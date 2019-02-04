@@ -3,7 +3,7 @@
 $response = '';
 $headers = [];
 
-for ($i = 1; $i < 30; $i++) {
+for ($i = 1; $i < 20; $i++) {
     $url = \sprintf('/big/wall/%s.jpg', $i);
 
     $images .= \sprintf('<div><img src="%s"></div>', $url);
